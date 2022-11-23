@@ -11,7 +11,7 @@ const SynonymSearch = () => {
 		e.preventDefault();
 
 		setWord('');
-		router.push(`/${word}`);
+		router.push(`/search/${word}`);
 	};
 	return (
 		<form onSubmit={handleWordSearch}>
@@ -23,7 +23,7 @@ const SynonymSearch = () => {
 				value={word}
 				onChange={(e) => setWord(e.target.value)}
 			/>
-			<button>Search</button>
+			<button type='submit'>Search</button>
 		</form>
 	);
 };
