@@ -17,13 +17,19 @@ const SynonymSearch = () => {
 		<form onSubmit={handleWordSearch}>
 			<label htmlFor='word-search'></label>
 			<input
+				className='px-4 py-2 bg-gray-50 border rounded-l-2xl'
 				id='word-search'
 				placeholder='Your Word'
 				type='text'
 				value={word}
 				onChange={(e) => setWord(e.target.value)}
 			/>
-			<button type='submit'>Search</button>
+			<button
+				className='px-4 py-2 bg-gray-100 border rounded-r-2xl'
+				type='submit'
+			>
+				Search
+			</button>
 		</form>
 	);
 };

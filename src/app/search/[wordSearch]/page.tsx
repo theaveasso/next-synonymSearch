@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 type PageProps = {
 	params: {
 		wordSearch: string;
@@ -20,10 +22,15 @@ const SynonymSearchResult = async ({ params: { wordSearch } }: PageProps) => {
 	const searchResult = await synonymSearch(wordSearch);
 	return (
 		<div>
-			<h3>Your Search Result</h3>
-			<ul>
+			<h3 className='text-xl'>
+				Your Search Result of{' '}
+				<span className=' italic font-bold underline'>{wordSearch}</span>
+			</h3>
+			<ul className='flex flex-col pt-10 mt-5 rounded-xl bg-green-50 p-5'>
 				{searchResult.map((w: SearchResult) => (
-					<p>{w.word}</p>
+					<Link className='px-4' href={`/search/${w.word}`} key={w.count}>
+						{w.word}
+					</Link>
 				))}
 			</ul>
 		</div>
