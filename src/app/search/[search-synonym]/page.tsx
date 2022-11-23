@@ -1,6 +1,3 @@
-import { data } from 'autoprefixer';
-import React from 'react';
-
 type PageProps = {
 	params: {
 		wordSearch: string;
@@ -19,7 +16,8 @@ async function synonymSearch(word: string) {
 }
 
 const SynonymSearchResult = async ({ params: { wordSearch } }: PageProps) => {
-	const searchResult: SearchResult[] = await synonymSearch(wordSearch);
+	console.log(wordSearch);
+	const searchResult = await synonymSearch(wordSearch);
 	return (
 		<div>
 			<h3>Your Search Result</h3>

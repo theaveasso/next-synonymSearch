@@ -7,6 +7,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html>
+			<title>Synonym Search</title>
 			<head />
 			<body>{children}</body>
 		</html>
